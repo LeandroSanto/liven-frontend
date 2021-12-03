@@ -1,21 +1,17 @@
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../assets/white-theme'
 
 export const styles = StyleSheet.create({
 	container: {
-			flex: 1,
-			alignSelf: 'center',
-			position: 'absolute',
-			bottom: 0,
-			justifyContent: 'center',
-			padding: 20,
+		flex: 1,
+		alignSelf: 'center',
+		position: 'absolute',
+		bottom: 0,
+		padding: 20,
+		flexDirection: 'row',
+		justifyContent: 'space-evenly',  
 	},
-
-	bottoMenuView: {
-			flexDirection: 'row',
-			alignSelf: 'center',
-			justifyContent: 'space-between',       
-			paddingHorizontal: 20,
-			color: COLORS.ICONS_SECONDARY_COLOR,
+	TouchableButton:{
+		paddingHorizontal: 20,
+		paddingVertical: 0,
 	}
 });

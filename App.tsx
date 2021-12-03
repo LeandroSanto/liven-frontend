@@ -5,6 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Home } from './src/screens/Home';
 import { BottonMenu } from './src/components/BottonMenu';
+import { styles } from './src/assets/global/styles';
+import { View } from 'react-native';
 
 
 export default function App() {
@@ -18,10 +20,10 @@ export default function App() {
   }
 
   return (
-    <>
+    <View style={styles.container}>
       <StatusBar style='auto'/>
       <Home />
       <BottonMenu />
-    </>
+    </View>
   );
 }

@@ -1,9 +1,10 @@
+import { Roboto_100Thin } from '@expo-google-fonts/roboto';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
     }
 });
