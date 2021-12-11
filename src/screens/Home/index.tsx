@@ -1,44 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
-import { ActivityIndicator, View,Text } from 'react-native';
+import { ActivityIndicator, View,Text, FlatList, SafeAreaView, Alert } from 'react-native';
+
+import { api } from '../../services/api';
 
 import { ShopItem } from '../../components/ShopItem';
 import { styles } from './styles';
 
 export function Home(){
-    
-    <ActivityIndicator size='large'/>
-    
-    return(
-        <>
-        <Header />
-        <View style={styles.container}>
-            <ShopItem 
-            image="https://amopaocaseiro.com.br/wp-content/uploads/2020/01/pao-caseiro-para-iniciantes_02-840x560.jpg"
-            name= "Pão Caseiro"
-            stock= {30000}
-            price= "1.00"
-            />
-            <ShopItem 
-            image="https://amopaocaseiro.com.br/wp-content/uploads/2020/01/pao-caseiro-para-iniciantes_02-840x560.jpg"
-            name= "Pão Caseiro"
-            stock= {30000}
-            price= "1.00"
-            />
-            <ShopItem 
-            image="https://amopaocaseiro.com.br/wp-content/uploads/2020/01/pao-caseiro-para-iniciantes_02-840x560.jpg"
-            name= "Pão Caseiro"
-            stock= {30000}
-            price= "1.00"
-            />
-            <ShopItem 
-            image="https://amopaocaseiro.com.br/wp-content/uploads/2020/01/pao-caseiro-para-iniciantes_02-840x560.jpg"
-            name= "Pão Caseiro"
-            stock= {30000}
-            price= "1.00"
-            />
-        </View>
+  <ActivityIndicator size='large'/>
+  const [ productList, setProductList ] = useState([]);
+  
+  useEffect(() => {
+      async function loadData() {
+          const response = await api.get('/product')
+              .then ((response) => setProductList(response.data))
+          
+      }
+    loadData()
+  }),[]
 
-        </>
-    )
+  
+  return(
+    <View style={styles.container}>
+        <Header /> 
+        <FlatList
+          data={productList}
+          keyExtractor={ item => String(item.id)}
+          renderItem={ ({ item }) => <ShopItem productlist={ item }/>}
+        />
+    </View>
+
+
+  )
 }

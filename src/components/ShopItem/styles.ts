@@ -12,14 +12,14 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.BACKGROUND_WHITE,
         
         borderRadius: 6,
-        marginHorizontal:10,
+        marginHorizontal: 3,
     },
     imageBox: {
         width: 150,
         height: 150,
         alignSelf: 'center',
         justifyContent: 'center',
-        padding: 3,
+        padding: 1.2,
 
         borderRadius: 6,
     },
