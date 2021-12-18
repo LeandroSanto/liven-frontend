@@ -1,10 +1,33 @@
 import { Roboto_100Thin } from '@expo-google-fonts/roboto';
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
+import { COLORS } from '../../assets/theme';
 
 export const styles = StyleSheet.create({
-    container: {
+    container:{
+        flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
+    },
+
+    searchInput: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: 5,
+        justifyContent: 'center',
+        alignItems:'center',
+        
+        paddingTop:15,
+    },
+
+    listContainer: {
+        alignItems: 'center',
+        paddingVertical:3,
+    },
+
+    listItem: {
+        padding: 7,
+
+        margin: 5,
+    },
+    
+    icon: {
+        paddingRight:10,
     }
 });

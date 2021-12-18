@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, Image } from 'react-native';
+import { View,Text, Image, TouchableOpacity } from 'react-native';
 
 import { styles } from './styles';
 
@@ -10,11 +10,11 @@ interface ShopItemProps {
 		stock: number,
 		price: string,
 	}
-}
+};
 
 export const ShopItem:React.FunctionComponent<ShopItemProps> = ({ productlist }) =>{
 	return(
-		<View style={styles.container}>
+		<TouchableOpacity style={styles.container}>
 			<Image source={{uri:`${productlist.image}`}} style={styles.imageBox}/>
 			<View style={styles.itemDescript}>
 				<Text>{productlist.name}</Text>
@@ -23,6 +23,6 @@ export const ShopItem:React.FunctionComponent<ShopItemProps> = ({ productlist })
 			<View style={styles.itemPrice}>
 				<Text>R$ {productlist.price}</Text>
 			</View>
-		</View>
+		</TouchableOpacity>
 	)
 }
